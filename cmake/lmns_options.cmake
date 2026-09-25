@@ -6,9 +6,19 @@ target_compile_options(lmns_options INTERFACE
 		-Wextra
 		-Wpedantic
 		-fno-strict-aliasing
-		-fPIC
-		-rdynamic
 	>
+)
+
+target_compile_options(lmns_options INTERFACE
+    $<$<AND:$<PLATFORM_ID:Linux>,$<CXX_COMPILER_ID:GNU>>:
+        -fPIC
+    >
+)
+
+target_link_options(lmns_options INTERFACE
+    $<$<AND:$<PLATFORM_ID:Linux>,$<CXX_COMPILER_ID:GNU>>:
+        -rdynamic 
+    >
 )
 
 target_compile_definitions(lmns_options INTERFACE
