@@ -9,7 +9,7 @@
 
 namespace lmns::detail
 {
-    class log_buffer
+    class Log_buffer
     {
     private:
         constexpr static int64_t BULLET_SIZE = 256;
@@ -61,13 +61,13 @@ namespace lmns::detail
             return {data(), static_cast<std::size_t>(size())};
         }
     };
-    class stream_buffer final : public std::streambuf
+    class Stream_buffer final : public std::streambuf
     {
     private:
-        log_buffer &bullet;
+        Log_buffer &bullet;
 
     public:
-        explicit stream_buffer(log_buffer &bullet) noexcept : bullet(bullet) {}
+        explicit Stream_buffer(Log_buffer &bullet) noexcept : bullet(bullet) {}
 
     protected:
         std::streamsize xsputn(const char *data, std::streamsize m_size) override

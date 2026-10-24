@@ -23,8 +23,8 @@ std::uint64_t Observe(std::string_view value) noexcept {
 }
 
 std::uint64_t WriteWithSmallStreamBuffer(std::string_view message) {
-  lmns::detail::log_buffer buffer;
-  lmns::detail::stream_buffer stream_buffer(buffer);
+  lmns::detail::Log_buffer buffer;
+  lmns::detail::Stream_buffer stream_buffer(buffer);
   std::ostream stream(&stream_buffer);
   stream << message;
   return Observe(buffer.view());

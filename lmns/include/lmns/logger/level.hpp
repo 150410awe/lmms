@@ -8,9 +8,9 @@
 #include <lmns/export.hpp>
 
 namespace lmns {
-    class LMNS_API log_level final {
+    class LMNS_API Log_level final {
     public:
-        enum class level : std::int8_t {
+        enum class Level : std::int8_t {
             DEBUG = 0,
             INFO = 1,
             WARN = 2,
@@ -18,8 +18,8 @@ namespace lmns {
             FATAL = 4,
             OFF = 5,
         };
-        [[nodiscard]] static std::optional<std::string_view> to_string(level value) noexcept;
-        [[nodiscard]] static std::optional<level> from_string(std::string_view value) noexcept;
+        [[nodiscard]] static std::optional<std::string_view> to_string(Level value) noexcept;
+        [[nodiscard]] static std::optional<Level> from_string(std::string_view value) noexcept;
     };
 }
 
