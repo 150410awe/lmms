@@ -1,0 +1,11 @@
+win:
+        gcc g++ Ninja cmake
+        lmns/
+                cmake -B build -G "Ninja"
+                cmake --build build
+
+linux:
+        "/usr/bin/gcc" "/usr/bin/g++" cmake make
+        lmns/build
+                cmake ..
+                make

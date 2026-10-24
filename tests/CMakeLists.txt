@@ -25,5 +25,5 @@ foreach(TEST_FILE_PATH IN LISTS LMNS_TEST_FILE_SET)
 	add_test(NAME "${TEST_FILE_NAME}" COMMAND "${TEST_FILE_NAME}")
 endforeach()
 
-
+add_subdirectory(inner_tests)
 

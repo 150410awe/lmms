@@ -6,6 +6,9 @@ bin-release/
 
 # Other files and folders
 .settings/
+.vscode/
+.marscode/
+.cache/
 
 # Executables
 *.swf
@@ -18,6 +21,8 @@ bin-release/
 # information for Eclipse / Flash Builder.
 
 build 
+build-linux
+build-win
 bin
 lib
 

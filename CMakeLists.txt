@@ -28,6 +28,17 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS ON)
 
 project(lmns VERSION 0.1.0 LANGUAGES CXX C)
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+if(CMAKE_GENERATOR MATCHES "Ninja|Unix Makefiles|MinGW Makefiles|MSYS Makefiles")
+  add_custom_target(copy_compile_commands ALL
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+      ${CMAKE_BINARY_DIR}/compile_commands.json
+      ${CMAKE_SOURCE_DIR}/compile_commands.json
+    COMMENT "Copying compile_commands.json to project root for clangd"
+  )
+endif()
 include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 
@@ -78,7 +89,3 @@ endif()
 if(LMNS_BUILD_TOOLS)
 	add_subdirectory(tools)
 endif()
-
-
-
-
