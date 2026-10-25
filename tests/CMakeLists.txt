@@ -4,7 +4,8 @@ list(SORT LMNS_TEST_FILE_SET)
 
 find_package(Threads REQUIRED)
 
-set(LMNS_TEST_OUT_DIR "${PROJECT_SOURCE_DIR}/bin/tests")
+set(LMNS_BIN_DIR "${PROJECT_SOURCE_DIR}/bin" CACHE PATH "Directory for test and tool executables")
+set(LMNS_TEST_OUT_DIR "${LMNS_BIN_DIR}/tests")
 
 foreach(TEST_FILE_PATH IN LISTS LMNS_TEST_FILE_SET)
 	get_filename_component(TEST_FILE_NAME "${TEST_FILE_PATH}" NAME_WE)

@@ -1,11 +1,14 @@
 win:
-        gcc g++ Ninja cmake
-        lmns/
-                cmake -B build -G "Ninja"
-                cmake --build build
+        gcc g++ Ninja cmake (MSYS2 UCRT64)
+        build-win.bat
 
 linux:
-        "/usr/bin/gcc" "/usr/bin/g++" cmake make
-        lmns/build
-                cmake ..
-                make
+        /usr/bin/gcc /usr/bin/g++ cmake make
+        build-linux.sh
+
+parameters:
+        - Debug | Release | ReleaseDebInfo | RelWithDebInfo | MinSizeRel 
+
+cmake variable:
+        -DCMAKE_BUILD_TYPE=<Config>   build_type
+        -DLMNS_BIN_DIR=<dir>          Executable file output root directory. default <source>/bin

@@ -1,44 +1,38 @@
 [
 {
-  "directory": "/mnt/D/Project/server-framework/lmns/build-linux/lmns",
-  "command": "/usr/bin/g++  -I/mnt/D/Project/server-framework/lmns/lmns/include -I/mnt/D/Project/server-framework/lmns/lmns/src -O3 -DNDEBUG -std=gnu++20 -Werror -Wall -Wextra -Wpedantic -fno-strict-aliasing -fPIC -DNDEBUG -O2 -o CMakeFiles/lmns.dir/empty.cpp.o -c /mnt/D/Project/server-framework/lmns/lmns/empty.cpp",
-  "file": "/mnt/D/Project/server-framework/lmns/lmns/empty.cpp",
-  "output": "lmns/CMakeFiles/lmns.dir/empty.cpp.o"
-},
-{
-  "directory": "/mnt/D/Project/server-framework/lmns/build-linux/lmns",
-  "command": "/usr/bin/g++  -I/mnt/D/Project/server-framework/lmns/lmns/include -I/mnt/D/Project/server-framework/lmns/lmns/src -O3 -DNDEBUG -std=gnu++20 -Werror -Wall -Wextra -Wpedantic -fno-strict-aliasing -fPIC -DNDEBUG -O2 -o CMakeFiles/lmns.dir/src/logger/formatter.cpp.o -c /mnt/D/Project/server-framework/lmns/lmns/src/logger/formatter.cpp",
-  "file": "/mnt/D/Project/server-framework/lmns/lmns/src/logger/formatter.cpp",
+  "directory": "/home/lmn/project/lmns/build-linux/lmns",
+  "command": "/usr/bin/g++  -I/home/lmn/project/lmns/lmns/include -I/home/lmn/project/lmns/lmns/src -O3 -DNDEBUG -std=gnu++20 -Werror -Wall -Wextra -Wpedantic -fno-strict-aliasing -fPIC -DNDEBUG -O2 -o CMakeFiles/lmns.dir/src/logger/formatter.cpp.o -c /home/lmn/project/lmns/lmns/src/logger/formatter.cpp",
+  "file": "/home/lmn/project/lmns/lmns/src/logger/formatter.cpp",
   "output": "lmns/CMakeFiles/lmns.dir/src/logger/formatter.cpp.o"
 },
 {
-  "directory": "/mnt/D/Project/server-framework/lmns/build-linux/lmns",
-  "command": "/usr/bin/g++  -I/mnt/D/Project/server-framework/lmns/lmns/include -I/mnt/D/Project/server-framework/lmns/lmns/src -O3 -DNDEBUG -std=gnu++20 -Werror -Wall -Wextra -Wpedantic -fno-strict-aliasing -fPIC -DNDEBUG -O2 -o CMakeFiles/lmns.dir/src/logger/level.cpp.o -c /mnt/D/Project/server-framework/lmns/lmns/src/logger/level.cpp",
-  "file": "/mnt/D/Project/server-framework/lmns/lmns/src/logger/level.cpp",
+  "directory": "/home/lmn/project/lmns/build-linux/lmns",
+  "command": "/usr/bin/g++  -I/home/lmn/project/lmns/lmns/include -I/home/lmn/project/lmns/lmns/src -O3 -DNDEBUG -std=gnu++20 -Werror -Wall -Wextra -Wpedantic -fno-strict-aliasing -fPIC -DNDEBUG -O2 -o CMakeFiles/lmns.dir/src/logger/level.cpp.o -c /home/lmn/project/lmns/lmns/src/logger/level.cpp",
+  "file": "/home/lmn/project/lmns/lmns/src/logger/level.cpp",
   "output": "lmns/CMakeFiles/lmns.dir/src/logger/level.cpp.o"
 },
 {
-  "directory": "/mnt/D/Project/server-framework/lmns/build-linux/tests",
-  "command": "/usr/bin/g++  -I/mnt/D/Project/server-framework/lmns/lmns/include -O3 -DNDEBUG -std=gnu++20 -Wall -Wextra -Wpedantic -fno-strict-aliasing -fPIC -DNDEBUG -O2 -o CMakeFiles/test_datetime_consume.dir/test_datetime_consume.cpp.o -c /mnt/D/Project/server-framework/lmns/tests/test_datetime_consume.cpp",
-  "file": "/mnt/D/Project/server-framework/lmns/tests/test_datetime_consume.cpp",
+  "directory": "/home/lmn/project/lmns/build-linux/tests",
+  "command": "/usr/bin/g++  -I/home/lmn/project/lmns/lmns/include -O3 -DNDEBUG -std=gnu++20 -Wall -Wextra -Wpedantic -fno-strict-aliasing -fPIC -DNDEBUG -O2 -o CMakeFiles/test_datetime_consume.dir/test_datetime_consume.cpp.o -c /home/lmn/project/lmns/tests/test_datetime_consume.cpp",
+  "file": "/home/lmn/project/lmns/tests/test_datetime_consume.cpp",
   "output": "tests/CMakeFiles/test_datetime_consume.dir/test_datetime_consume.cpp.o"
 },
 {
-  "directory": "/mnt/D/Project/server-framework/lmns/build-linux/tests",
-  "command": "/usr/bin/g++  -I/mnt/D/Project/server-framework/lmns/lmns/include -O3 -DNDEBUG -std=gnu++20 -Wall -Wextra -Wpedantic -fno-strict-aliasing -fPIC -DNDEBUG -O2 -o CMakeFiles/test_lock.dir/test_lock.cpp.o -c /mnt/D/Project/server-framework/lmns/tests/test_lock.cpp",
-  "file": "/mnt/D/Project/server-framework/lmns/tests/test_lock.cpp",
+  "directory": "/home/lmn/project/lmns/build-linux/tests",
+  "command": "/usr/bin/g++  -I/home/lmn/project/lmns/lmns/include -O3 -DNDEBUG -std=gnu++20 -Wall -Wextra -Wpedantic -fno-strict-aliasing -fPIC -DNDEBUG -O2 -o CMakeFiles/test_lock.dir/test_lock.cpp.o -c /home/lmn/project/lmns/tests/test_lock.cpp",
+  "file": "/home/lmn/project/lmns/tests/test_lock.cpp",
   "output": "tests/CMakeFiles/test_lock.dir/test_lock.cpp.o"
 },
 {
-  "directory": "/mnt/D/Project/server-framework/lmns/build-linux/tests",
-  "command": "/usr/bin/g++  -I/mnt/D/Project/server-framework/lmns/lmns/include -O3 -DNDEBUG -std=gnu++20 -Wall -Wextra -Wpedantic -fno-strict-aliasing -fPIC -DNDEBUG -O2 -o CMakeFiles/test_macros.dir/test_macros.cpp.o -c /mnt/D/Project/server-framework/lmns/tests/test_macros.cpp",
-  "file": "/mnt/D/Project/server-framework/lmns/tests/test_macros.cpp",
+  "directory": "/home/lmn/project/lmns/build-linux/tests",
+  "command": "/usr/bin/g++  -I/home/lmn/project/lmns/lmns/include -O3 -DNDEBUG -std=gnu++20 -Wall -Wextra -Wpedantic -fno-strict-aliasing -fPIC -DNDEBUG -O2 -o CMakeFiles/test_macros.dir/test_macros.cpp.o -c /home/lmn/project/lmns/tests/test_macros.cpp",
+  "file": "/home/lmn/project/lmns/tests/test_macros.cpp",
   "output": "tests/CMakeFiles/test_macros.dir/test_macros.cpp.o"
 },
 {
-  "directory": "/mnt/D/Project/server-framework/lmns/build-linux/tests/inner_tests",
-  "command": "/usr/bin/g++  -I/mnt/D/Project/server-framework/lmns/lmns/src -I/mnt/D/Project/server-framework/lmns/lmns/include -O3 -DNDEBUG -std=gnu++20 -Wall -Wextra -Wpedantic -fno-strict-aliasing -fPIC -DNDEBUG -O2 -o CMakeFiles/test_log_buffer.dir/test_log_buffer.cpp.o -c /mnt/D/Project/server-framework/lmns/tests/inner_tests/test_log_buffer.cpp",
-  "file": "/mnt/D/Project/server-framework/lmns/tests/inner_tests/test_log_buffer.cpp",
+  "directory": "/home/lmn/project/lmns/build-linux/tests/inner_tests",
+  "command": "/usr/bin/g++  -I/home/lmn/project/lmns/lmns/src -I/home/lmn/project/lmns/lmns/include -O3 -DNDEBUG -std=gnu++20 -Wall -Wextra -Wpedantic -fno-strict-aliasing -fPIC -DNDEBUG -O2 -o CMakeFiles/test_log_buffer.dir/test_log_buffer.cpp.o -c /home/lmn/project/lmns/tests/inner_tests/test_log_buffer.cpp",
+  "file": "/home/lmn/project/lmns/tests/inner_tests/test_log_buffer.cpp",
   "output": "tests/inner_tests/CMakeFiles/test_log_buffer.dir/test_log_buffer.cpp.o"
 }
 ]

@@ -52,7 +52,7 @@ void format(const Log_record_view &record, Log_buffer &output,
       std::tm buffer{};
 #if defined(_WIN32)
       const errno_t result = localtime_s(&buffer, &current_second);
-      ASSERT_RETNONE2(result == 0, "failed to convert log time to local time");
+      ASSERT_RET_VOID2(result == 0, "failed to convert log time to local time");
 #else
       const std::tm *result = localtime_r(&current_second, &buffer);
       ASSERT_RET_VOID2(result != nullptr,
