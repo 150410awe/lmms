@@ -6,7 +6,7 @@
 #include <mutex>
 #include <string_view>
 
-#include <lmns/logger/appeder.hpp>
+#include <lmns/logger/appender.hpp>
 #include <lmns/logger/level.hpp>
 
 namespace lmns {
@@ -38,7 +38,7 @@ public:
   [[nodiscard]] static Appender_ptr make_stdout_appender();
   [[nodiscard]] static Appender_ptr
   make_file_appender(std::filesystem::path path);
-  static void append(const Appender_ptr &appeder, Log_level::Level level,
+  static void append(const Appender_ptr &appender, Log_level::Level level,
                      std::string_view formatted_record) noexcept;
 };
 } // namespace detail

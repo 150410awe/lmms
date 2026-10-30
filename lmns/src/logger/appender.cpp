@@ -43,7 +43,7 @@ void Appender::Impl::append(Log_level::Level level,
   } catch (...) {
 
     constexpr std::string_view message =
-        "pans logger: appender operation failed\n";
+        "lmns logger: appender operation failed\n";
     std::fwrite(message.data(), 1, message.size(), stderr);
   }
 }
@@ -97,10 +97,15 @@ public:
     }
   }
 
-  ~File_appender_impl() override {
-    if (file != nullptr) {
-      std::fflush(file);
-      std::fclose(file);
+  ~File_appender_impl() noexcept override {
+    if (file == nullptr)
+      return;
+    const bool flush_failed = std::fflush(file) != 0;
+    const bool close_failed = std::fclose(file) != 0;
+    if (flush_failed || close_failed) {
+      constexpr std::string_view message =
+          "lmns logger: failed to close logger file\n";
+      std::fwrite(message.data(), 1, message.size(), stderr);
     }
   }
 
