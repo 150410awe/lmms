@@ -8,7 +8,7 @@
 
 namespace lmns::detail {
 Formatter::Formatter(std::string_view pattern) : pattern(pattern) {
-  if (parse())
+  if (parse() != 0)
     throw std::invalid_argument("invalid log format. parse failed.");
 }
 
@@ -23,7 +23,7 @@ template <typename T> void append_integer(Log_buffer &output, T value) {
                 static_cast<std::size_t>(result.ptr - buffer.data()));
 }
 
-void format(const Log_record_view &record, Log_buffer &output,
+void formatter(const Log_record_view &record, Log_buffer &output,
             const Formatter::Format_item &item) {
   switch (item.type) {
   case Formatter::Type::LEVEL:
@@ -94,14 +94,14 @@ void format(const Log_record_view &record, Log_buffer &output,
     break;
   case Formatter::Type::MICROSECONDS: {
 
-      const auto total_microseconds =
-          std::chrono::duration_cast<std::chrono::microseconds>(
-              record.timestamp.time_since_epoch())
-              .count();
-      std::int64_t microseconds = total_microseconds % 1'000'000;
-      ASSERT_RET_VOID2(microseconds >= 0,
-                       "log timestamp has a negative microsecond remainder: "
-                           << microseconds);
+    const auto total_microseconds =
+        std::chrono::duration_cast<std::chrono::microseconds>(
+            record.timestamp.time_since_epoch())
+            .count();
+    std::int64_t microseconds = total_microseconds % 1'000'000;
+    ASSERT_RET_VOID2(
+        microseconds >= 0,
+        "log timestamp has a negative microsecond remainder: " << microseconds);
 
     // 秒内微秒必须补齐成固定六位，否则 12:00:00.1234
     // 这样的时间戳无法解析，也无法按字典序排序。
@@ -162,10 +162,10 @@ std::optional<Formatter::Type> form_string(char c) {
   return std::nullopt;
 }
 
-void Formatter::formatter(const Log_record_view &record,
-                          Log_buffer &output) const {
+void Formatter::format(const Log_record_view &record,
+                       Log_buffer &output) const {
   for (const auto &item : item)
-    format(record, output, item);
+    formatter(record, output, item);
 }
 
 void Formatter::add_literal(std::string &literal) {
@@ -207,9 +207,9 @@ int Formatter::parse() {
 
   add_literal(literal);
 
-    for (const auto &item : item)
-      ASSERT_RET_VAL2(item.type != Formatter::Type::NONE, -3,
-                      "logger formatter contains a null format item");
+  for (const auto &item : item)
+    ASSERT_RET_VAL2(item.type != Formatter::Type::NONE, -3,
+                    "logger formatter contains a null format item");
 
   return 0;
 }

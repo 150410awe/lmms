@@ -50,7 +50,7 @@ public:
   };
 
   explicit Formatter(std::string_view pattern);
-  void formatter(const Log_record_view &record, Log_buffer &output) const;
+  void format(const Log_record_view &record, Log_buffer &output) const;
   [[nodiscard]] const std::string &get_pattern() const noexcept { return pattern; }
 
 private:
