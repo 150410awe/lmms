@@ -2,73 +2,83 @@
 #define LMNS_INCLUDE_LMNS_MACROS_HPP
 
 #include <cassert>
-#include <iostream>
 #include <cstdint>
+#include <iostream>
 
-#define LMNS_ASSERT(X) \
-	if (!(X)) [[unlikely]] { \
+#define LMNS_ASSERT(X)                                                                                            \
+	if (!(X)) [[unlikely]] {                                                                                  \
 		std::cerr << __FILE__ << ":" << __LINE__ << " ASSERT FAILED: " << #X << "\nSTACKTRACE: TO DO \n"; \
-		assert(X); \
+		assert(X);                                                                                        \
 	}
-#define LMNS_ASSERT2(X, INFO) \
-	if (!(X)) [[unlikely]] { \
+#define LMNS_ASSERT2(X, INFO)                                                                                                                 \
+	if (!(X)) [[unlikely]] {                                                                                                              \
 		std::cerr << __FILE__ << ":" << __LINE__ << " ASSERT FAILED: " << #X << "\nERROR INFO: " << INFO << "\nSTACKTRACE: TO DO \n"; \
-		assert(X); \
+		assert(X);                                                                                                                    \
 	}
-#define ASSERT_RET_VAL(X, VAL) \
-	do { \
-		if (X) [[likely]] break; \
-		LMNS_ASSERT(X);	\
-		return VAL; \
-	} while(false)
-#define ASSERT_RET_VAL2(X, VAL, INFO) \
-	do { \
-		if (X) [[likely]] break; \
+#define ASSERT_RET_VAL(X, VAL)    \
+	do {                      \
+		if (X) [[likely]] \
+			break;    \
+		LMNS_ASSERT(X);   \
+		return VAL;       \
+	} while (false)
+#define ASSERT_RET_VAL2(X, VAL, INFO)  \
+	do {                           \
+		if (X) [[likely]]      \
+			break;         \
 		LMNS_ASSERT2(X, INFO); \
-		return VAL; \
-	} while(false)
-#define ASSERT_RET_VOID(X) \
-	do { \
-		if (X) [[likely]] break; \
-		LMNS_ASSERT(X); \
-		return; \
-	} while(false)
-#define ASSERT_RET_VOID2(X, INFO) \
-	do { \
-		if (X) [[likely]] break; \
+		return VAL;            \
+	} while (false)
+#define ASSERT_RET_VOID(X)        \
+	do {                      \
+		if (X) [[likely]] \
+			break;    \
+		LMNS_ASSERT(X);   \
+		return;           \
+	} while (false)
+#define ASSERT_RET_VOID2(X, INFO)      \
+	do {                           \
+		if (X) [[likely]]      \
+			break;         \
 		LMNS_ASSERT2(X, INFO); \
-		return; \
-	} while(false)
-#define ASSERT_NOEFFECT(X) \
-    do{\
-        if(X) [[likely]] break;\
-        LMNS_ASSERT(X);\
-    }while(false)
-#define ASSERT_NOEFFECT2(X, INFO) \
-    do{\
-	if(X) [[likely]] break;\
-	LMNS_ASSERT2(X, INFO);\
-    }while(false)
-#define ASSERT_CONTINUE(X) \
-	if (!(X)) [[unlikely]] { \
-		LMNS_ASSERT(X); \
-		continue; \
-	} else {}
-#define ASSERT_CONTINUE2(X, INFO) \
-	if (!(X)) [[unlikely]] { \
+		return;                \
+	} while (false)
+#define ASSERT_NOEFFECT(X)        \
+	do {                      \
+		if (X) [[likely]] \
+			break;    \
+		LMNS_ASSERT(X);   \
+	} while (false)
+#define ASSERT_NOEFFECT2(X, INFO)      \
+	do {                           \
+		if (X) [[likely]]      \
+			break;         \
 		LMNS_ASSERT2(X, INFO); \
-		continue; \
-	} else {} 
-#define ASSERT_BREAK(X) \
+	} while (false)
+#define ASSERT_CONTINUE(X)       \
 	if (!(X)) [[unlikely]] { \
-		LMNS_ASSERT(X); \
-		break; \
-	} else {}
-#define ASSERT_BREAK2(X, INFO) \
-	if (!(X)) [[unlikely]] { \
+		LMNS_ASSERT(X);  \
+		continue;        \
+	} else {                 \
+	}
+#define ASSERT_CONTINUE2(X, INFO)      \
+	if (!(X)) [[unlikely]] {       \
 		LMNS_ASSERT2(X, INFO); \
-		break; \
-	} else {}
+		continue;              \
+	} else {                       \
+	}
+#define ASSERT_BREAK(X)          \
+	if (!(X)) [[unlikely]] { \
+		LMNS_ASSERT(X);  \
+		break;           \
+	} else {                 \
+	}
+#define ASSERT_BREAK2(X, INFO)         \
+	if (!(X)) [[unlikely]] {       \
+		LMNS_ASSERT2(X, INFO); \
+		break;                 \
+	} else {                       \
+	}
 
 using i8 = std::int8_t;
 using s8 = i8;
